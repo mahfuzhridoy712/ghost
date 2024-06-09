@@ -1,0 +1,225 @@
+@import url('https://fonts.cdnfonts.com/css/hancoke');
+
+                
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(52, 27, 194, 0.664);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ghost-container {
+    position: relative;
+    display: inline-block;
+}
+
+
+.ghost {
+    width: 130px;
+    height:190px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 70px 70px 0 0;
+    -webkit-animation: float 3s linear infinite;
+    animation: float 3s linear infinite;
+    position: relative;
+    box-shadow: 0 0 20px violet;
+    
+}
+.ghost:hover{
+    
+    box-shadow: 
+        0 0 10px violet,
+        0 0 20px violet,
+        0 0 40px violet;
+        
+    
+        
+}
+
+@-webkit-keyframes float {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(30px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.eye {
+    width: 14px;
+    height: 19px;
+    border-radius: 60%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    animation: blink 2s infinite;
+}
+
+.eye.left {
+    top: 50px;
+    left: 40px;
+}
+
+.eye.right {
+    top: 50px;
+    right: 40px;
+}
+
+@keyframes blink {
+    50% {
+        height: 10%;
+    }
+    10% {
+        height: 0%;
+    }
+    100% {
+        height: 10%;
+    }
+}
+
+.blush {
+    width: 20px;
+    height: 7px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgba(246, 40, 170, 0.862);
+}
+
+.blush.left {
+    top: 73px;
+    left: 30px;
+}
+
+.blush.right {
+    top: 73px;
+    right: 30px;
+}
+
+.feet{
+    width: 35px;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    border-top: 0 ;
+    border-bottom-left-radius: 110px;
+    border-bottom-right-radius: 110px;
+    bottom: -15px;
+}
+.feet.one{
+    left: 0px;
+
+}
+.feet.two{
+    left: 32px;
+}
+.feet.three{
+    left: 65px;
+}
+.feet.four{
+    left: 95px;
+}
+
+
+.text-box {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Hancoke', sans-serif;                        
+    border-radius: 50%;
+    box-shadow: 0 0 10px violet; 
+    padding: 30px;
+    position: absolute;
+    bottom: 100%; 
+    left: 120%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.ghost-container:hover .text-box {
+    visibility: visible;
+    opacity: 1;
+}
+
+.shadow {
+    width: 120px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    animation: shadow-float 3s linear infinite;
+}
+
+@keyframes shadow-float {
+    0% {
+        transform: translateX(-50%) translateY(0px);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateX(-50%) translateY(0px);
+        opacity: 0.7;
+    }
+}
+
+.logo{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 130px;
+    display: flex;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+@keyframes a{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.logo a{
+    color: #000000;
+}
+
+a:hover{
+    animation: a .5s ease-in-out;
+
+}
